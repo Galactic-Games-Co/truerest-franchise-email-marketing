@@ -70,16 +70,21 @@
       padding: 10px 15px;
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
-    .announcement-bar span {
+    .announcement-bar span.pill {
       background-color: rgba(255, 255, 255, 0.18);
-      padding: 2px 10px;
+      padding: 3px 10px;
       border-radius: 12px;
       margin-right: 8px;
       font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .announcement-bar strong {
+      color: #7dd3fc;
     }
 
     /* Navigation Header */
@@ -129,7 +134,7 @@
     nav.header-nav {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 24px;
     }
 
     nav.header-nav a {
@@ -200,20 +205,30 @@
       font-size: 38px;
       font-weight: 800;
       color: var(--primary-navy);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       letter-spacing: -0.5px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .hero-bullet-lines {
-      max-width: 440px;
-      margin: 22px auto 28px auto;
-      text-align: left;
+    /* Visually centered block with left-aligned items inside */
+    .hero-bullet-wrapper {
       display: flex;
+      justify-content: center;
+      margin: 22px 0 28px 0;
+    }
+
+    .hero-bullet-lines {
+      display: inline-flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 10px;
+      background-color: #ffffff;
+      padding: 18px 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
 
     .hero-bullet-line {
@@ -224,11 +239,12 @@
       font-size: 17px;
       font-weight: 700;
       color: var(--primary-navy);
+      text-align: left;
     }
 
     .hero-bullet-line .check-icon {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       background-color: var(--accent-soft);
       color: var(--primary-blue);
       border-radius: 50%;
@@ -243,9 +259,13 @@
     .hero p.lead {
       font-size: 16px;
       color: var(--text-body);
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto 30px auto;
-      line-height: 1.65;
+      line-height: 1.7;
+    }
+
+    .hero p.lead strong {
+      color: var(--primary-navy);
     }
 
     .hero-actions {
@@ -298,6 +318,22 @@
       color: var(--primary-navy);
     }
 
+    /* ROI Callout Strip */
+    .roi-strip {
+      max-width: 820px;
+      margin: 28px auto 0 auto;
+      background-color: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 14px;
+      color: var(--primary-navy);
+    }
+
+    .roi-strip strong {
+      color: var(--primary-blue);
+    }
+
     /* Comparison Section */
     section.comparison {
       padding: 60px 0;
@@ -337,7 +373,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
@@ -397,7 +433,7 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .comp-list li .icon {
@@ -476,6 +512,70 @@
       margin-bottom: 6px;
     }
 
+    /* How the 2-Minute Personalization Works */
+    .how-it-works-box {
+      margin-top: 40px;
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 32px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .how-it-works-title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .how-it-works-title h3 {
+      font-size: 22px;
+      color: var(--primary-navy);
+      margin-bottom: 6px;
+    }
+
+    .how-it-works-title p {
+      font-size: 14px;
+      color: var(--text-body);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step-item {
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .step-badge {
+      display: inline-block;
+      background-color: var(--primary-blue);
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step-item h4 {
+      font-size: 16px;
+      color: var(--primary-navy);
+      margin-bottom: 6px;
+    }
+
+    .step-item p {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
     /* Proof / Track Record */
     section.proof {
       padding: 60px 0;
@@ -504,7 +604,7 @@
     .proof-banner p {
       color: #e2e8f0;
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .proof-stats {
@@ -602,11 +702,22 @@
       color: var(--text-muted);
     }
 
+    .pricing-location-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
     .pricing-setup-line {
       font-size: 13px;
       font-weight: 600;
       color: var(--primary-blue);
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .pricing-body {
@@ -896,29 +1007,6 @@
       line-height: 1.6;
     }
 
-    /* Corporate DNS Box */
-    .dns-box {
-      max-width: 960px;
-      margin: 40px auto 0 auto;
-      background-color: #ffffff;
-      border: 1px solid var(--border-color);
-      border-left: 4px solid var(--primary-navy);
-      border-radius: 0 10px 10px 0;
-      padding: 24px 28px;
-    }
-
-    .dns-box h4 {
-      font-size: 16px;
-      color: var(--primary-navy);
-      margin-bottom: 8px;
-    }
-
-    .dns-box p {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.6;
-    }
-
     /* Footer */
     footer.site-footer {
       background-color: var(--primary-navy);
@@ -963,7 +1051,7 @@
 
     /* Responsive adjustments */
     @media (max-width: 900px) {
-      .pillars-grid, .pricing-grid, .comparison-grid, .faq-grid {
+      .pillars-grid, .pricing-grid, .comparison-grid, .faq-grid, .steps-grid {
         grid-template-columns: 1fr;
       }
       .proof-banner {
@@ -978,6 +1066,9 @@
       header.site-header nav.header-nav {
         display: none;
       }
+      .hero-bullet-lines {
+        padding: 16px 20px;
+      }
     }
   </style>
 </head>
@@ -985,7 +1076,7 @@
 
   <!-- Top Notice Bar -->
   <div class="announcement-bar">
-    <span>Turnkey Email Initiative</span> Get your location set up and active before Black Friday and holiday gift card sales.
+    <span class="pill">Turnkey Email Initiative</span> Get your location set up and active before Black Friday and holiday promo sales. <strong>Black Friday Enrollment Cutoff: November 10th</strong>
   </div>
 
   <!-- Header -->
@@ -1020,33 +1111,39 @@
 
       <h1>Keep Your Pods Full and Capture Holiday Revenue.</h1>
 
-      <!-- One line at a time description requested by user -->
-      <div class="hero-bullet-lines">
-        <div class="hero-bullet-line">
-          <span class="check-icon">&#10003;</span>
-          <span>Done-for-you email service.</span>
-        </div>
-        <div class="hero-bullet-line">
-          <span class="check-icon">&#10003;</span>
-          <span>Zero software fees.</span>
-        </div>
-        <div class="hero-bullet-line">
-          <span class="check-icon">&#10003;</span>
-          <span>Zero tech headaches.</span>
-        </div>
-        <div class="hero-bullet-line">
-          <span class="check-icon">&#10003;</span>
-          <span>One flat rate.</span>
+      <!-- Centered container with left-aligned one-line-at-a-time items -->
+      <div class="hero-bullet-wrapper">
+        <div class="hero-bullet-lines">
+          <div class="hero-bullet-line">
+            <span class="check-icon">&#10003;</span>
+            <span>Done-for-you email service.</span>
+          </div>
+          <div class="hero-bullet-line">
+            <span class="check-icon">&#10003;</span>
+            <span>Zero software fees.</span>
+          </div>
+          <div class="hero-bullet-line">
+            <span class="check-icon">&#10003;</span>
+            <span>Zero tech headaches.</span>
+          </div>
+          <div class="hero-bullet-line">
+            <span class="check-icon">&#10003;</span>
+            <span>One flat rate.</span>
+          </div>
         </div>
       </div>
 
       <p class="lead">
-        We handle your monthly newsletters, holiday sales campaigns, and sending platform, customized with your location's booking links, address, and team sign-off. Everything taken completely off your plate so you can focus on running your spa.
+        We handle your <strong>personalized monthly newsletters</strong>, holiday sales campaigns, and sending platform, tailored with your personal voice, your location's direct booking links, membership links, address, and team sign-off. Everything is taken off your plate so you can focus on running your spa.
       </p>
 
       <div class="hero-actions">
         <a href="#enroll" class="btn-primary">Enroll Your Location &rarr;</a>
         <a href="#pricing" class="btn-secondary">View Plan Details</a>
+      </div>
+
+      <div class="roi-strip">
+        <strong>The Simple Math:</strong> Just <strong>one</strong> extra float package, holiday promo sale, or new member per month pays for your entire monthly fee. Everything after that is pure profit for your spa.
       </div>
     </div>
   </section>
@@ -1070,15 +1167,15 @@
           <ul class="comp-list">
             <li>
               <span class="icon">&times;</span>
-              <span><strong>Expensive Software Fees:</strong> Third-party platforms charge $100 to $200 per month just to store your contacts and hit send.</span>
+              <span><strong>Expensive Software Fees:</strong> Third-party platforms like Mailchimp, MailerLite, and Constant Contact charge $100 to $250 per month just to store your contacts and hit send.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
-              <span><strong>You Have to Write Everything:</strong> You are forced to spend hours or pay someone to brainstorm topics, write copy, and build emails every single month.</span>
+              <span><strong>You Have to Write Everything:</strong> You are forced to spend hours or pay someone to brainstorm topics, write copy, and build responsive emails each month.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
-              <span><strong>Marketing Gets Pushed Aside:</strong> When you get busy running your spa, emails just do not get sent, leaving gift card and holiday revenue on the table.</span>
+              <span><strong>Marketing Gets Pushed Aside:</strong> When you get busy running your spa, emails just don't get sent, leaving holiday promo sales, repeat float bookings, and new membership sign-ups on the table.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
@@ -1089,24 +1186,24 @@
 
         <!-- All-In-One Solution -->
         <div class="comp-card turnkey">
-          <div class="comp-badge">All-In-One Solution</div>
+          <div class="comp-badge">All-In-One Personalized Solution</div>
           <h3>Software + Full Service Included</h3>
           <ul class="comp-list">
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>One Flat Rate Covers All:</strong> Both the sending software and full management are included for $150/month. No extra software bills.</span>
+              <span><strong>One Flat Rate Covers All:</strong> Both the sending software and full campaign management are included for $150/month. No extra software bills.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>Custom &amp; Personalized:</strong> Every campaign is individually tailored with your spa's direct booking link, local phone number, address, and your team's signature. No generic blasts.</span>
+              <span><strong>Custom &amp; Personalized to Your Voice:</strong> Every monthly email features a personal touch from your spa, plus your direct float booking link, membership sign-up link, phone number, directions, and your team's signature.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>Near-Zero Time Investment:</strong> We write, design, and send everything. You just do a quick 30-second review and approve.</span>
+              <span><strong>Near-Zero Time Investment:</strong> We write, design, and schedule everything. You just spend two minutes adding a quick personal sentence to our monthly prompt and give a thumbs-up.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>High-Engagement Results:</strong> Engaging emails averaging 25% to 35% open rates across active True REST locations, keeping your pods full.</span>
+              <span><strong>High-Engagement Results:</strong> Engaging, personal emails averaging 25% to 35% open rates across active True REST locations, driving return floaters and new members.</span>
             </li>
           </ul>
         </div>
@@ -1121,7 +1218,7 @@
         <div class="section-tag">Complete Scope of Service</div>
         <h2 class="section-title">Everything Handled For Your Spa</h2>
         <p class="section-subtitle">
-          A hands-off email marketing system designed to keep your pods booked and drive peak holiday gift card revenue.
+          A hands-off email marketing system designed to book more floats, grow memberships, and drive holiday sales revenue.
         </p>
       </div>
 
@@ -1131,7 +1228,7 @@
           <div class="pillar-number">Pillar 01</div>
           <h3>Sending Platform Included ($0 Extra)</h3>
           <p>
-            You never have to pay for Mailchimp, Klaviyo, or SendPulse. We provide the dedicated sending platform, contact storage, and delivery at zero extra cost.
+            You never have to pay for Mailchimp, MailerLite, Constant Contact, or SendPulse. We provide the dedicated sending platform, contact storage, and delivery at zero extra cost.
           </p>
           <ul>
             <li>Zero contact count penalty fees</li>
@@ -1143,14 +1240,14 @@
         <!-- Pillar 2 -->
         <div class="pillar-card">
           <div class="pillar-number">Pillar 02</div>
-          <h3>Monthly Newsletters (Fill Pods Year-Round)</h3>
+          <h3>Monthly Newsletters (Book More Return Floaters)</h3>
           <p>
-            Engaging, conversational emails sent once a month to keep your location top-of-mind and drive repeat float bookings between holiday promotions.
+            Engaging, conversational emails sent once a month with a personal note from you that keeps your location top-of-mind, brings past guests back into your pods, and grows memberships.
           </p>
           <ul>
-            <li>Conversational, human, non-salesy tone</li>
-            <li>Engaging questions that get clients to reply</li>
-            <li>Direct booking buttons customized for your spa</li>
+            <li>Warm, personal 1-on-1 tone in your location's voice</li>
+            <li>Fun, relatable prompts that get clients to reply</li>
+            <li>Direct float booking and membership cards built for your spa</li>
           </ul>
         </div>
 
@@ -1159,15 +1256,41 @@
           <div class="pillar-number">Pillar 03</div>
           <h3>Major Holiday Sales Campaigns</h3>
           <p>
-            Full promo campaigns for Black Friday, Holiday Gift Cards, Valentine's Day, Mother's Day, and Father's Day so you never miss out on peak gift card revenue.
+            Full promo campaigns for Black Friday, Holiday BOGO, Valentine's Day, Mother's Day, and Father's Day so you never miss out on peak holiday sales revenue.
           </p>
           <ul>
             <li>3 primary sends plus 3 follow-ups to non-openers only</li>
-            <li>Maximizes gift card sales without burning client inboxes</li>
-            <li>Direct links to your local gift card purchase portal</li>
+            <li>Maximizes holiday promo sales without burning client inboxes</li>
+            <li>Direct links to your local holiday promo purchase portal</li>
           </ul>
         </div>
       </div>
+
+      <!-- How the 2-Minute Personalization Works -->
+      <div class="how-it-works-box">
+        <div class="how-it-works-title">
+          <h3>Why Our Monthly Emails Get 25% to 35% Open Rates</h3>
+          <p>Customers ignore generic corporate blasts, but they love hearing from their local spa owner. Here is how we make every monthly email genuinely yours in just two minutes:</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-item">
+            <span class="step-badge">Step 1 &bull; We Build It</span>
+            <h4>We Write &amp; Design the Email</h4>
+            <p>Each month, we write a warm, conversational topic, build the mobile layout, and configure all of your local booking and membership links.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">Step 2 &bull; 2-Minute Prompt</span>
+            <h4>You Add One Personal Paragraph</h4>
+            <p>We send you a preview with a simple, fun prompt (like sharing your favorite fall tradition or Halloween candy). You reply with a quick sentence or two in your own words.</p>
+          </div>
+          <div class="step-item">
+            <span class="step-badge">Step 3 &bull; We Send &amp; Resend</span>
+            <h4>You Approve &amp; We Handle the Rest</h4>
+            <p>We drop your personal answer right into the email, send it to your list, and automatically send a follow-up 48 hours later to anyone who missed it.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1178,7 +1301,7 @@
         <div>
           <h3>Battle-Tested in Active True REST Spas</h3>
           <p>
-            This system is already running live for True REST spas in Brick Township, NJ, Ocean Township, NJ, and Chico, CA. Both Scott DeLorenzo and Veronica Carpenter can vouch for the effortless process and the tangible float bookings it delivers.
+            This exact system is already running live for True REST spas in Brick Township, NJ, Ocean Township, NJ, and Chico, CA. Both Scott DeLorenzo and Veronica Carpenter can vouch for how easy the process is, how much their members love replying to the monthly emails, and the consistent float bookings and promo sales it generates.
           </p>
         </div>
         <div class="proof-stats">
@@ -1187,8 +1310,8 @@
             <div class="stat-label">Average Open Rate</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">Near Zero</div>
-            <div class="stat-label">Time Required From Owners</div>
+            <div class="stat-number">2 Mins</div>
+            <div class="stat-label">Your Monthly Time</div>
           </div>
         </div>
       </div>
@@ -1212,18 +1335,18 @@
           <div class="pricing-header">
             <div class="pricing-plan-title">Annual Agreement</div>
             <div class="pricing-price">$150 <span>/ month</span></div>
+            <div class="pricing-location-sub">Single Location</div>
             <div class="pricing-setup-line">$0 Setup Fee (Waived)</div>
           </div>
           <div class="pricing-body">
             <ul class="pricing-features">
               <li><span class="check">&#10003;</span> <span><strong>Software &amp; Sending Platform:</strong> Included</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Locally Personalized Emails:</strong> Custom links, address &amp; team sign-off</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Year-Round Monthly Newsletters:</strong> 12 per year</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Personalized Monthly Newsletters:</strong> 12 per year (plus 48-hr resends)</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Full Holiday Sales Campaigns:</strong> Black Friday, BOGO, Valentine's, Mother's Day, Father's Day</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Smart 3+3 Resend Strategy:</strong> Maximize promo sales</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Complete Local Customization:</strong> Direct booking links, membership links, phone, directions &amp; signature</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Additional Locations:</strong> +$100 / month per location</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Initial 12-Month Term:</strong> Disperses onboarding costs evenly</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Post-Term Flexibility:</strong> Stays month-to-month after 12 months with preferred rate retained</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Post-Term Flexibility:</strong> Transitions to month-to-month afterward with preferred pricing retained</span></li>
             </ul>
           </div>
           <div class="pricing-footer">
@@ -1236,18 +1359,18 @@
           <div class="pricing-header">
             <div class="pricing-plan-title">Annual Paid-in-Full</div>
             <div class="pricing-price">$1,500 <span>/ year</span></div>
+            <div class="pricing-location-sub">Single Location</div>
             <div class="pricing-setup-line">$300 Savings (2 Months Free)</div>
           </div>
           <div class="pricing-body">
             <ul class="pricing-features">
               <li><span class="check">&#10003;</span> <span><strong>Software &amp; Sending Platform:</strong> Included</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Locally Personalized Emails:</strong> Custom links, address &amp; team sign-off</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Year-Round Monthly Newsletters:</strong> 12 per year</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Personalized Monthly Newsletters:</strong> 12 per year (plus 48-hr resends)</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Full Holiday Sales Campaigns:</strong> Black Friday, BOGO, Valentine's, Mother's Day, Father's Day</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Smart 3+3 Resend Strategy:</strong> Maximize promo sales</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Complete Local Customization:</strong> Direct booking links, membership links, phone, directions &amp; signature</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Additional Locations:</strong> +$1,000 / year per location</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Setup Fee:</strong> $0 (Waived)</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>One Annual Payment:</strong> Clean accounting with zero monthly invoicing</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>One Annual Payment:</strong> Clean accounting with zero monthly invoices</span></li>
             </ul>
           </div>
           <div class="pricing-footer">
@@ -1260,15 +1383,15 @@
           <div class="pricing-header">
             <div class="pricing-plan-title">Flexible Month-to-Month</div>
             <div class="pricing-price">$200 <span>/ month</span></div>
+            <div class="pricing-location-sub">Single Location</div>
             <div class="pricing-setup-line">+$300 Setup Fee Upfront</div>
           </div>
           <div class="pricing-body">
             <ul class="pricing-features">
               <li><span class="check">&#10003;</span> <span><strong>Software &amp; Sending Platform:</strong> Included</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Locally Personalized Emails:</strong> Custom links, address &amp; team sign-off</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Year-Round Monthly Newsletters:</strong> Included</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Personalized Monthly Newsletters:</strong> Included</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Holiday Sales Campaigns:</strong> Included</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Smart 3+3 Resend Strategy:</strong> Maximize promo sales</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Complete Local Customization:</strong> Direct booking links, membership links, phone, directions &amp; signature</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Additional Locations:</strong> +$150 / month per location</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Onboarding Setup Fee:</strong> $300 due at start</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Freedom to Cancel:</strong> Month-to-month with 30-day notice</span></li>
@@ -1283,7 +1406,7 @@
       <!-- Pricing Commitment Transparency Box -->
       <div class="pricing-note-box">
         <strong>Transparent Terms on the 12-Month Commitment:</strong>
-        Setting up your dedicated sending platform, domain verification, and custom templates takes real upfront work. The 12-month agreement allows us to completely waive the $300 setup fee and spread that onboarding cost evenly over the year. After your initial 12 months, your service automatically stays month-to-month at your same locked-in $150 rate.
+        Setting up your dedicated sending platform, domain verification, and custom location templates takes real upfront work. The 12-month agreement allows us to completely waive the $300 setup fee and spread that onboarding cost evenly over the year. Following your initial 12-month commitment, service automatically transitions to month-to-month afterward with preferred pricing retained.
       </div>
     </div>
   </section>
@@ -1292,10 +1415,10 @@
   <section class="enrollment" id="enroll">
     <div class="container">
       <div class="section-title-area">
-        <div class="section-tag">Fast Onboarding</div>
+        <div class="section-tag">Fast Onboarding &bull; November 10th Cutoff</div>
         <h2 class="section-title">Enroll Your Location Today</h2>
         <p class="section-subtitle">
-          Submit your details below to reserve your setup spot and guarantee launch before Black Friday.
+          Enroll by <strong>November 10th</strong> to guarantee your location is fully built, tested, and ready to launch before Black Friday promos begin.
         </p>
       </div>
 
@@ -1340,22 +1463,22 @@
             <div class="plan-radios">
               <label class="plan-radio-label">
                 <input type="radio" name="servicePlan" value="annual" checked onchange="updatePriceCalculation()">
-                <span><strong>Annual Agreement:</strong> $150 / mo ($0 Setup Fee Waived with 12-Month Term)</span>
+                <span><strong>Annual Agreement:</strong> $150 / mo Single Location ($0 Setup Fee Waived with 12-Month Term)</span>
               </label>
               <label class="plan-radio-label">
                 <input type="radio" name="servicePlan" value="paid_in_full" onchange="updatePriceCalculation()">
-                <span><strong>Annual Paid-in-Full:</strong> $1,500 / yr (Save $300, 2 Months Free)</span>
+                <span><strong>Annual Paid-in-Full:</strong> $1,500 / yr Single Location (Save $300, 2 Months Free)</span>
               </label>
               <label class="plan-radio-label">
                 <input type="radio" name="servicePlan" value="month_to_month" onchange="updatePriceCalculation()">
-                <span><strong>Flexible Month-to-Month:</strong> $200 / mo + $300 Setup Fee</span>
+                <span><strong>Flexible Month-to-Month:</strong> $200 / mo Single Location + $300 Setup Fee</span>
               </label>
             </div>
           </div>
 
           <div class="cost-preview">
             <div class="cost-preview-text" id="costSummaryText">
-              Initial Investment (1 Location, Annual Agreement):
+              Monthly Investment (1 Location, Annual Agreement, $0 Setup Fee):
             </div>
             <div class="cost-preview-val" id="costSummaryValue">
               $150 / mo
@@ -1365,7 +1488,7 @@
           <div class="form-group">
             <label class="checkbox-label">
               <input type="checkbox" id="termsCheck" required>
-              <span>I agree to the selected service terms. For annual plans, I understand the $300 setup fee is waived in exchange for an initial 12-month service commitment, transitioning to month-to-month afterward with preferred pricing retained.</span>
+              <span id="termsText">I agree to the Annual Agreement terms ($150/mo base rate). I understand the $300 setup fee is waived in exchange for an initial 12-month commitment, transitioning to month-to-month afterward with preferred pricing retained.</span>
             </label>
           </div>
 
@@ -1375,12 +1498,12 @@
         </form>
 
         <div id="submissionSuccess" class="submission-success">
-          <h3>Enrollment Received Successfully</h3>
+          <h3>Step 1 Complete: Location Details Reserved</h3>
           <p>
-            Thank you! Your location has been queued for email onboarding. We will reach out to your primary email address within 24 hours with the simple subscriber list export instructions and setup details.
+            Thank you! Your location has been queued for Black Friday email onboarding. We will send your payment setup link and simple subscriber list export instructions to your email address shortly.
           </p>
           <div style="font-size: 13px; color: #15803d; font-weight: 600;">
-            Next Step: Prepare an active customer list export from your POS/booking system.
+            Next Step: Export your active customer list (CSV) from your booking system so we can configure your account.
           </div>
         </div>
 
@@ -1395,7 +1518,7 @@
         <div class="section-tag">Common Questions</div>
         <h2 class="section-title">Frequently Asked Questions</h2>
         <p class="section-subtitle">
-          Everything you need to know about setup, sending, and ongoing management.
+          Everything you need to know about setup, personalization, and ongoing management.
         </p>
       </div>
 
@@ -1403,59 +1526,44 @@
         <div class="faq-item">
           <h4>Do I need to purchase any software or email tools?</h4>
           <p>
-            Nope. Both the sending platform and full creative service are included in your $150/month flat rate. You never have to buy Mailchimp, Klaviyo, SendPulse, or any other third-party tool.
+            Nope. Both the sending platform and full creative service are included in your $150/month flat rate. You never have to pay for Mailchimp, MailerLite, Constant Contact, SendPulse, or any other third-party tool.
           </p>
         </div>
 
         <div class="faq-item">
           <h4>Are these generic or canned emails?</h4>
           <p>
-            Never. Every email is individually personalized for your specific spa with your direct booking link, studio phone number, address, and your team's signature.
+            Never. Every monthly email is individually personalized to your location's voice. Along with a short personal note guided by our monthly prompt, every email is built with your direct float booking link, direct membership sign-up link, click-to-call phone number, Google Maps directions, and your own signature.
           </p>
         </div>
 
         <div class="faq-item">
           <h4>How much time will this take me each month?</h4>
           <p>
-            About 60 seconds. We write the copy, build the emails, test the links, and send you a preview. You give a quick thumbs-up, and we handle the rest.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h4>How does sending from our True REST domain work?</h4>
-          <p>
-            Emails send directly from your verified spa domain for maximum inbox delivery. Corporate simply verifies three standard DNS records on truerest.com (takes 5 minutes). Corporate retains 100% control of the domain at all times.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h4>How do you handle client lists and privacy?</h4>
-          <p>
-            Your customer database belongs 100% to your location. Lists are isolated in dedicated, encrypted databases, scrubbed for bounces, and never shared or co-mingled with any other business.
+            About two minutes. We write the copy, build the email, test all the links, and send you a preview with a simple one-question prompt. You reply with a quick sentence or two to make it personal to you, give us a thumbs-up, and we handle the rest.
           </p>
         </div>
 
         <div class="faq-item">
           <h4>What happens after the initial 12-month agreement?</h4>
           <p>
-            After your first 12 months, your account automatically rolls into a month-to-month agreement. You keep your locked-in $150/month rate.
+            After completing your initial 12-month commitment, your service automatically transitions to month-to-month afterward with preferred pricing retained.
           </p>
         </div>
 
         <div class="faq-item">
-          <h4>How soon can my location launch?</h4>
+          <h4>How do you handle client lists and privacy?</h4>
           <p>
-            Once corporate verifies the DNS records and you send your list export, your location can be fully active within 48 to 72 hours, completely ready for Black Friday.
+            Your customer database belongs 100% to your location. Lists are isolated in dedicated, secure databases, kept clean of bounces, and never shared or co-mingled with any other business.
           </p>
         </div>
-      </div>
 
-      <!-- Corporate DNS Box -->
-      <div class="dns-box">
-        <h4>Note for Corporate Technology &amp; Leadership (Pat, Stacy, &amp; Amir):</h4>
-        <p>
-          This program requires zero software licenses or administrative overhead from corporate. Setup takes less than 5 minutes: Stacy simply adds 3 standard DKIM CNAME records to `truerest.com`. No MX records are changed, zero email routes are modified, and corporate maintains full domain governance.
-        </p>
+        <div class="faq-item">
+          <h4>What is the deadline to launch in time for Black Friday?</h4>
+          <p>
+            To guarantee your custom templates, booking links, and subscriber list are tested and active before Black Friday promotions begin, please enroll your location no later than <strong>November 10th</strong>.
+          </p>
+        </div>
       </div>
 
     </div>
@@ -1496,9 +1604,11 @@
       const selectedPlan = document.querySelector('input[name="servicePlan"]:checked').value;
       const textElem = document.getElementById('costSummaryText');
       const valElem = document.getElementById('costSummaryValue');
+      const termsElem = document.getElementById('termsText');
 
       let summaryText = "";
       let summaryVal = "";
+      let termsCopy = "";
 
       if (selectedPlan === 'annual') {
         const base = 150;
@@ -1506,12 +1616,14 @@
         const total = base + addl;
         summaryText = `Monthly Investment (${locations} Location${locations > 1 ? 's' : ''}, Annual Agreement, $0 Setup Fee):`;
         summaryVal = `$${total} / mo`;
+        termsCopy = `I agree to the Annual Agreement terms ($${total}/mo). I understand the $300 setup fee is waived in exchange for an initial 12-month commitment, transitioning to month-to-month afterward with preferred pricing retained.`;
       } else if (selectedPlan === 'paid_in_full') {
         const base = 1500;
         const addl = (locations - 1) * 1000;
         const total = base + addl;
         summaryText = `Annual Investment (${locations} Location${locations > 1 ? 's' : ''}, Paid-in-Full, $0 Setup Fee):`;
         summaryVal = `$${total} / yr`;
+        termsCopy = `I agree to the Annual Paid-in-Full terms ($${total}/yr with $0 setup fee and 2 months free), transitioning to month-to-month after the initial 12-month term with preferred pricing retained.`;
       } else if (selectedPlan === 'month_to_month') {
         const base = 200;
         const addl = (locations - 1) * 150;
@@ -1519,10 +1631,12 @@
         const setup = 300;
         summaryText = `Initial Start Cost (${locations} Location${locations > 1 ? 's' : ''}: $${monthly}/mo + $${setup} Setup Fee):`;
         summaryVal = `$${monthly + setup} to start`;
+        termsCopy = `I agree to the Flexible Month-to-Month terms ($${monthly}/mo plus the one-time $300 onboarding setup fee due at start). Cancel anytime with 30-day notice.`;
       }
 
       textElem.innerText = summaryText;
       valElem.innerText = summaryVal;
+      termsElem.innerText = termsCopy;
     }
 
     function handleEnrollment(e) {
