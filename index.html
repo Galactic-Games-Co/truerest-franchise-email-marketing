@@ -163,23 +163,37 @@
     /* Hero Section */
     section.hero {
       background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
-      padding: 60px 0 50px 0;
+      padding: 55px 0 50px 0;
       border-bottom: 1px solid var(--border-color);
       text-align: center;
     }
 
-    .hero-eyebrow {
-      display: inline-block;
-      background-color: var(--accent-soft);
-      color: var(--primary-blue);
+    .hero-price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 2px solid var(--primary-blue);
+      border-radius: 50px;
+      padding: 8px 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 132, 200, 0.12);
+    }
+
+    .hero-price-amount {
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1;
+    }
+
+    .hero-price-label {
+      font-size: 13px;
       font-weight: 700;
+      color: var(--primary-blue);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      padding: 6px 16px;
-      border-radius: 30px;
-      margin-bottom: 18px;
+      letter-spacing: 0.5px;
     }
 
     .hero h1 {
@@ -188,50 +202,56 @@
       color: var(--primary-navy);
       margin-bottom: 18px;
       letter-spacing: -0.5px;
-      max-width: 940px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .hero p.lead {
-      font-size: 17px;
-      color: var(--text-body);
-      max-width: 840px;
-      margin: 0 auto 30px auto;
-      line-height: 1.7;
-    }
-
-    .hero-pills {
+    .hero-bullet-lines {
+      max-width: 440px;
+      margin: 22px auto 28px auto;
+      text-align: left;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 35px;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .hero-pill {
-      background-color: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 50px;
-      padding: 8px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dark);
+    .hero-bullet-line {
       display: flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      gap: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-navy);
     }
 
-    .hero-pill svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--primary-blue);
+    .hero-bullet-line .check-icon {
+      width: 22px;
+      height: 22px;
+      background-color: var(--accent-soft);
+      color: var(--primary-blue);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .hero p.lead {
+      font-size: 16px;
+      color: var(--text-body);
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      line-height: 1.65;
     }
 
     .hero-actions {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 16px;
       flex-wrap: wrap;
     }
@@ -372,7 +392,7 @@
     }
 
     .comp-list li {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       font-size: 14px;
       display: flex;
       align-items: flex-start;
@@ -991,38 +1011,42 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="hero-eyebrow">All-In-One Email Marketing Software &amp; Service</div>
-      <h1>Keep Your Pods Full and Capture Holiday Revenue.<br><span style="color: var(--primary-blue); font-size: 0.82em; display: inline-block; margin-top: 8px;">Done-For-You Email Service. Zero Software Fees. Zero Tech Headaches.</span></h1>
-      <p class="lead">
-        An all-in-one email marketing service and software platform built specifically for True REST Float Spa locations. We provide both the dedicated sending engine and custom creative execution, personalized with your location's local details, links, and voice. Everything is taken completely off your plate.
-      </p>
+      
+      <!-- Immediate Pricing Anchor -->
+      <div class="hero-price-badge">
+        <span class="hero-price-amount">$150 / mo</span>
+        <span class="hero-price-label">Flat Rate &bull; Software + Service Included</span>
+      </div>
 
-      <div class="hero-pills">
-        <div class="hero-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Dedicated Sending Engine Included
+      <h1>Keep Your Pods Full and Capture Holiday Revenue.</h1>
+
+      <!-- One line at a time description requested by user -->
+      <div class="hero-bullet-lines">
+        <div class="hero-bullet-line">
+          <span class="check-icon">&#10003;</span>
+          <span>Done-for-you email service.</span>
         </div>
-        <div class="hero-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Personalized for Your Location
+        <div class="hero-bullet-line">
+          <span class="check-icon">&#10003;</span>
+          <span>Zero software fees.</span>
         </div>
-        <div class="hero-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Year-Round Monthly Newsletters
+        <div class="hero-bullet-line">
+          <span class="check-icon">&#10003;</span>
+          <span>Zero tech headaches.</span>
         </div>
-        <div class="hero-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Full Major Holiday Promo Coverage
-        </div>
-        <div class="hero-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Average 25% to 35% Open Rates
+        <div class="hero-bullet-line">
+          <span class="check-icon">&#10003;</span>
+          <span>One flat rate.</span>
         </div>
       </div>
 
+      <p class="lead">
+        We handle your monthly newsletters, holiday sales campaigns, and sending platform, customized with your location's booking links, address, and team sign-off. Everything taken completely off your plate so you can focus on running your spa.
+      </p>
+
       <div class="hero-actions">
         <a href="#enroll" class="btn-primary">Enroll Your Location &rarr;</a>
-        <a href="#pricing" class="btn-secondary">View Program Terms</a>
+        <a href="#pricing" class="btn-secondary">View Plan Details</a>
       </div>
     </div>
   </section>
@@ -1034,7 +1058,7 @@
         <div class="section-tag">Why This Program Exists</div>
         <h2 class="section-title">The Real Cost of Going It Alone</h2>
         <p class="section-subtitle">
-          Following the recent software transition, locations are facing steep third-party software subscriptions and the burden of writing, coding, and managing email entirely on their own.
+          Following the recent software transition, locations are facing steep monthly software bills and the hassle of writing, designing, and sending email marketing from scratch.
         </p>
       </div>
 
@@ -1046,47 +1070,43 @@
           <ul class="comp-list">
             <li>
               <span class="icon">&times;</span>
-              <span><strong>Expensive SaaS Fees:</strong> Third-party platforms charge $150 to $250+ per month just to store contacts and send emails.</span>
+              <span><strong>Expensive Software Fees:</strong> Third-party platforms charge $100 to $200 per month just to store your contacts and hit send.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
-              <span><strong>You Write Everything:</strong> You are forced to spend hours writing copy, picking topics, and designing responsive emails each month.</span>
+              <span><strong>You Have to Write Everything:</strong> You are forced to spend hours or pay someone to brainstorm topics, write copy, and build emails every single month.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
-              <span><strong>Coding &amp; Link Errors:</strong> Building mobile-friendly email layouts and managing location-specific booking links is frustrating.</span>
+              <span><strong>Marketing Gets Pushed Aside:</strong> When you get busy running your spa, emails just do not get sent, leaving gift card and holiday revenue on the table.</span>
             </li>
             <li>
               <span class="icon">&times;</span>
-              <span><strong>Deliverability Risks:</strong> Without proper domain authentication and list hygiene, emails land directly in the spam folder.</span>
+              <span><strong>Clunky Tech &amp; Formatting:</strong> Spending late nights wrestling with email builders, broken buttons, and mobile formatting instead of running your spa.</span>
             </li>
           </ul>
         </div>
 
-        <!-- Turnkey Program -->
+        <!-- All-In-One Solution -->
         <div class="comp-card turnkey">
-          <div class="comp-badge">All-In-One Personalized Solution</div>
-          <h3>Software + Full Creative Service Included</h3>
+          <div class="comp-badge">All-In-One Solution</div>
+          <h3>Software + Full Service Included</h3>
           <ul class="comp-list">
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>One Flat Rate Covers All:</strong> Software sending infrastructure and full campaign management are completely included. Zero extra software fees.</span>
+              <span><strong>One Flat Rate Covers All:</strong> Both the sending software and full management are included for $150/month. No extra software bills.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>Custom &amp; Personalized:</strong> Every campaign is individually tailored with your spa's location details, custom booking links, local phone numbers, and your team's signature. Zero generic blasts.</span>
+              <span><strong>Custom &amp; Personalized:</strong> Every campaign is individually tailored with your spa's direct booking link, local phone number, address, and your team's signature. No generic blasts.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>Zero Time Investment:</strong> Full copy, HTML design, localized booking buttons, and sending are handled for you every month.</span>
+              <span><strong>Near-Zero Time Investment:</strong> We write, design, and send everything. You just do a quick 30-second review and approve.</span>
             </li>
             <li>
               <span class="icon">&#10003;</span>
-              <span><strong>Year-Round Retention:</strong> Monthly conversational newsletters keep pods full and retain members between major holiday promotions.</span>
-            </li>
-            <li>
-              <span class="icon">&#10003;</span>
-              <span><strong>Proven Results:</strong> High-reputation sending engine averaging 25% to 35% open rates across active True REST locations.</span>
+              <span><strong>High-Engagement Results:</strong> Engaging emails averaging 25% to 35% open rates across active True REST locations, keeping your pods full.</span>
             </li>
           </ul>
         </div>
@@ -1099,9 +1119,9 @@
     <div class="container">
       <div class="section-title-area">
         <div class="section-tag">Complete Scope of Service</div>
-        <h2 class="section-title">Everything Your Location Receives</h2>
+        <h2 class="section-title">Everything Handled For Your Spa</h2>
         <p class="section-subtitle">
-          A continuous, locally tailored email engine designed to fill float pods and generate record promotional revenue.
+          A hands-off email marketing system designed to keep your pods booked and drive peak holiday gift card revenue.
         </p>
       </div>
 
@@ -1109,41 +1129,41 @@
         <!-- Pillar 1 -->
         <div class="pillar-card">
           <div class="pillar-number">Pillar 01</div>
-          <h3>Software &amp; Sending Platform Included</h3>
+          <h3>Sending Platform Included ($0 Extra)</h3>
           <p>
-            You never have to pay for Mailchimp, SendPulse, or third-party tools. We provide the dedicated sending platform, list hygiene, and technical infrastructure at no extra cost.
+            You never have to pay for Mailchimp, Klaviyo, or SendPulse. We provide the dedicated sending platform, contact storage, and delivery at zero extra cost.
           </p>
           <ul>
             <li>Zero contact count penalty fees</li>
             <li>Sends directly from your verified spa domain</li>
-            <li>Full list hygiene and bounce management</li>
+            <li>Clean delivery directly to customer inboxes</li>
           </ul>
         </div>
 
         <!-- Pillar 2 -->
         <div class="pillar-card">
           <div class="pillar-number">Pillar 02</div>
-          <h3>Year-Round Monthly Newsletters</h3>
+          <h3>Monthly Newsletters (Fill Pods Year-Round)</h3>
           <p>
-            Engaging, conversational member retention emails delivered once per month to keep your location top-of-mind and drive recurring monthly float bookings.
+            Engaging, conversational emails sent once a month to keep your location top-of-mind and drive repeat float bookings between holiday promotions.
           </p>
           <ul>
             <li>Conversational, human, non-salesy tone</li>
-            <li>Engaging life questions that invite client replies</li>
-            <li>Direct booking buttons and membership package cards customized for your spa</li>
+            <li>Engaging questions that get clients to reply</li>
+            <li>Direct booking buttons customized for your spa</li>
           </ul>
         </div>
 
         <!-- Pillar 3 -->
         <div class="pillar-card">
           <div class="pillar-number">Pillar 03</div>
-          <h3>Major Holiday Sales Coverage</h3>
+          <h3>Major Holiday Sales Campaigns</h3>
           <p>
-            Maximum promotional revenue capture for Black Friday, Holiday BOGO, Valentine's Day, Mother's Day, and Father's Day using our smart 3+3 delivery strategy.
+            Full promo campaigns for Black Friday, Holiday Gift Cards, Valentine's Day, Mother's Day, and Father's Day so you never miss out on peak gift card revenue.
           </p>
           <ul>
             <li>3 primary sends plus 3 follow-ups to non-openers only</li>
-            <li>Protects member inboxes while capturing peak holiday sales</li>
+            <li>Maximizes gift card sales without burning client inboxes</li>
             <li>Direct links to your local gift card purchase portal</li>
           </ul>
         </div>
@@ -1156,9 +1176,9 @@
     <div class="container">
       <div class="proof-banner">
         <div>
-          <h3>Proven in Active True REST Spas</h3>
+          <h3>Battle-Tested in Active True REST Spas</h3>
           <p>
-            This system is already battle-tested and running live for True REST spas in Brick Township, NJ, Ocean Township, NJ, and Chico, CA. Both Scott DeLorenzo and Veronica Carpenter can vouch for the effortless process, exceptional deliverability, and tangible float bookings it delivers.
+            This system is already running live for True REST spas in Brick Township, NJ, Ocean Township, NJ, and Chico, CA. Both Scott DeLorenzo and Veronica Carpenter can vouch for the effortless process and the tangible float bookings it delivers.
           </p>
         </div>
         <div class="proof-stats">
@@ -1167,8 +1187,8 @@
             <div class="stat-label">Average Open Rate</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Hands-Off For Owners</div>
+            <div class="stat-number">Near Zero</div>
+            <div class="stat-label">Time Required From Owners</div>
           </div>
         </div>
       </div>
@@ -1179,10 +1199,10 @@
   <section class="pricing" id="pricing">
     <div class="container">
       <div class="section-title-area">
-        <div class="section-tag">Transparent Program Terms</div>
+        <div class="section-tag">Simple Pricing</div>
         <h2 class="section-title">Select the Plan for Your Location</h2>
         <p class="section-subtitle">
-          Personalized creative execution with clear operational pricing. Both the software platform and the creative service are fully covered in one flat fee.
+          Both the software platform and the creative service are fully covered in one flat rate. No hidden fees.
         </p>
       </div>
 
@@ -1203,7 +1223,7 @@
               <li><span class="check">&#10003;</span> <span><strong>Smart 3+3 Resend Strategy:</strong> Maximize promo sales</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Additional Locations:</strong> +$100 / month per location</span></li>
               <li><span class="check">&#10003;</span> <span><strong>Initial 12-Month Term:</strong> Disperses onboarding costs evenly</span></li>
-              <li><span class="check">&#10003;</span> <span><strong>Post-Term Flexibility:</strong> Converts to month-to-month service after 12 months with preferred rate retained</span></li>
+              <li><span class="check">&#10003;</span> <span><strong>Post-Term Flexibility:</strong> Stays month-to-month after 12 months with preferred rate retained</span></li>
             </ul>
           </div>
           <div class="pricing-footer">
@@ -1263,7 +1283,7 @@
       <!-- Pricing Commitment Transparency Box -->
       <div class="pricing-note-box">
         <strong>Transparent Terms on the 12-Month Commitment:</strong>
-        Setting up your dedicated sending infrastructure, domain verification, subscriber list cleaning, and custom responsive templates requires intensive upfront labor. The 12-month agreement allows us to completely waive the $300 setup fee and disperse that onboarding expense evenly over the year. Following your initial 12-month term, service automatically transitions to a flexible month-to-month agreement while retaining your preferred pricing terms.
+        Setting up your dedicated sending platform, domain verification, and custom templates takes real upfront work. The 12-month agreement allows us to completely waive the $300 setup fee and spread that onboarding cost evenly over the year. After your initial 12 months, your service automatically stays month-to-month at your same locked-in $150 rate.
       </div>
     </div>
   </section>
@@ -1383,28 +1403,28 @@
         <div class="faq-item">
           <h4>Do I need to purchase any software or email tools?</h4>
           <p>
-            No. Your flat monthly service fee includes the sending software, delivery infrastructure, and complete campaign management. You do not need to buy Mailchimp, Klaviyo, SendPulse, or any other third-party platform.
+            Nope. Both the sending platform and full creative service are included in your $150/month flat rate. You never have to buy Mailchimp, Klaviyo, SendPulse, or any other third-party tool.
           </p>
         </div>
 
         <div class="faq-item">
           <h4>Are these generic or canned emails?</h4>
           <p>
-            Never. Every campaign is individually personalized for your specific location. We tailor your local booking buttons, studio phone numbers, address, localized holiday promotions, and your specific team's signature.
+            Never. Every email is individually personalized for your specific spa with your direct booking link, studio phone number, address, and your team's signature.
           </p>
         </div>
 
         <div class="faq-item">
-          <h4>What do I have to do each month?</h4>
+          <h4>How much time will this take me each month?</h4>
           <p>
-            Virtually nothing. We write the copy, build responsive HTML emails, configure your localized booking links, test deliverability, and execute the sends. You simply watch repeat bookings and holiday sales roll in.
+            About 60 seconds. We write the copy, build the emails, test the links, and send you a preview. You give a quick thumbs-up, and we handle the rest.
           </p>
         </div>
 
         <div class="faq-item">
           <h4>How does sending from our True REST domain work?</h4>
           <p>
-            Emails send directly from your verified spa domain for maximum inbox deliverability. Corporate simply verifies three standard DKIM CNAME records on truerest.com, retaining 100% domain governance at all times with zero impact on corporate email.
+            Emails send directly from your verified spa domain for maximum inbox delivery. Corporate simply verifies three standard DNS records on truerest.com (takes 5 minutes). Corporate retains 100% control of the domain at all times.
           </p>
         </div>
 
@@ -1418,7 +1438,14 @@
         <div class="faq-item">
           <h4>What happens after the initial 12-month agreement?</h4>
           <p>
-            After completing your first 12 months, your account automatically transitions to a month-to-month agreement. You retain your locked-in preferred rate ($150/mo) and are not increased to the standard month-to-month rate.
+            After your first 12 months, your account automatically rolls into a month-to-month agreement. You keep your locked-in $150/month rate.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h4>How soon can my location launch?</h4>
+          <p>
+            Once corporate verifies the DNS records and you send your list export, your location can be fully active within 48 to 72 hours, completely ready for Black Friday.
           </p>
         </div>
       </div>
